@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Local tooling (opencode skills + lockfile)
+.agents/
+.opencode/
+skills-lock.json
+
