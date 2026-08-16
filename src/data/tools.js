@@ -1,5 +1,5 @@
 /**
- * tools.js — Single source of truth for every PixelTools tool.
+ * tools.js — Single source of truth for every Photo-PDF Tools tool.
  *
  * Add or edit a tool here and it will automatically show up on the
  * homepage, the tool listing pages, and its own tool page.

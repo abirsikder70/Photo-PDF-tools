@@ -15,7 +15,7 @@ export default function Footer() {
           <div className="md:col-span-2">
             <Link to="/" className="focus-ring inline-flex items-center gap-2 rounded-lg">
               <Logo className="h-8 w-8" />
-              <span className="text-lg font-bold tracking-tight">PixelTools</span>
+              <span className="text-lg font-bold tracking-tight">Photo-PDF Tools</span>
             </Link>
             <p className="mt-4 max-w-sm text-sm text-slate-500 dark:text-slate-400">
               All your image and PDF tools in one place. Fast, free and private — every
@@ -57,7 +57,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-slate-200 pt-6 text-sm text-slate-500 dark:border-slate-800 dark:text-slate-400 sm:flex-row">
-          <p>© {year} PixelTools. Built for everyone.</p>
+          <p>© {year} Photo-PDF Tools. Built for everyone.</p>
           <p className="flex items-center gap-2">
             <span className="inline-block h-2 w-2 rounded-full bg-emerald-500" aria-hidden="true" />
             Files never leave your device

@@ -26,13 +26,13 @@ export default function About() {
     <div className="animate-rise">
       <Seo
         title="About"
-        description="Learn about PixelTools — a free, private, all-in-one suite of image and PDF tools that run entirely in your browser."
+        description="Learn about Photo-PDF Tools — a free, private, all-in-one suite of image and PDF tools that run entirely in your browser."
       />
 
       <header className="mb-10">
-        <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">About PixelTools</h1>
+        <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">About Photo-PDF Tools</h1>
         <p className="mt-4 max-w-2xl text-lg text-slate-600 dark:text-slate-400">
-          PixelTools is an all-in-one suite of image and PDF tools. Whether you need to
+          Photo-PDF Tools is an all-in-one suite of image and PDF tools. Whether you need to
           compress a photo, convert a format or organize a PDF, you can do it here — fast,
           free and completely private.
         </p>
@@ -87,7 +87,7 @@ export default function About() {
       </section>
 
       <section className="mt-12 rounded-3xl bg-gradient-to-r from-primary-600 to-violet-600 px-6 py-12 text-center text-white">
-        <h2 className="text-2xl font-bold tracking-tight">Start using PixelTools today</h2>
+        <h2 className="text-2xl font-bold tracking-tight">Start using Photo-PDF Tools today</h2>
         <p className="mx-auto mt-2 max-w-xl text-primary-100">
           It is free, private and takes seconds.
         </p>

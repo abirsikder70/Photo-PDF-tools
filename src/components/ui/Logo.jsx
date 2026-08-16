@@ -1,5 +1,5 @@
 /**
- * Logo — the PixelTools logo mark (matches public/favicon.svg).
+ * Logo — the Photo-PDF Tools logo mark (matches public/favicon.svg).
  */
 export function Logo({ className = 'h-8 w-8' }) {
   return (

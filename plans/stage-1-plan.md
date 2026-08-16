@@ -1,9 +1,9 @@
-# PixelTools — Stage 1 Plan
+# Photo-PDF Tools — Stage 1 Plan
 
 An all-in-one Image and PDF tools website.
 
 **Stack:** React + Vite + JavaScript + Tailwind CSS v4 + React Router
-**Directory:** `/home/abir/Coding/Photo and PDF tools/pixeltools`
+**Directory:** `/home/abir/Coding/Photo-PDF-tools`
 
 ---
 
@@ -70,7 +70,7 @@ src/
 
 - **Header** — sticky, logo, nav (Home / Image Tools / PDF Tools / About), dark-mode toggle, mobile hamburger menu.
 - **Footer** — quick links, tool categories, privacy note, copyright.
-- **Homepage** — hero ("PixelTools" + "All Your Image & PDF Tools in One Place", 2 CTAs, trust badges), Image Tools section (6 cards), PDF Tools section (8 cards), "Why PixelTools" privacy section, CTA banner.
+- **Homepage** — hero ("Photo-PDF Tools" + "All Your Image & PDF Tools in One Place", 2 CTAs, trust badges), Image Tools section (6 cards), PDF Tools section (8 cards), "Why Photo-PDF Tools" privacy section, CTA banner.
 - **Image Tools / PDF Tools pages** — header + grid of all tool cards.
 - **Tool pages** — render `ToolPageLayout` with an honest "under development – coming in Stage 2/3" panel. No fake buttons.
 - **Reusable UI** — `FileUploader` (drag-drop + browse + validation), `FilePreview`, `DownloadButton`, `LoadingState`, `ErrorMessage`, `ToolCard`, `Seo` (per-page title + meta description).

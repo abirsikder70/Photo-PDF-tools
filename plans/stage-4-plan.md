@@ -1,4 +1,4 @@
-# PixelTools — Stage 4 Plan: Polish & Quality Pass
+# Photo-PDF Tools — Stage 4 Plan: Polish & Quality Pass
 
 **Goal:** Production-grade polish without changing tool behavior. Fix performance
 (huge single JS bundle), tighten SEO/meta, improve accessibility & keyboard nav,

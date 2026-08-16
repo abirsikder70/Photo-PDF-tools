@@ -1,4 +1,4 @@
-# PixelTools — Stage 3 Plan: Implement all PDF Tools
+# Photo-PDF Tools — Stage 3 Plan: Implement all PDF Tools
 
 **Goal:** Every PDF tool page becomes fully functional — real processing with page
 previews/thumbnails, selection/reordering, downloads, loading/progress and clear errors.

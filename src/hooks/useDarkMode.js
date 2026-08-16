@@ -10,7 +10,7 @@ import { useEffect, useState } from 'react'
  */
 export function useDarkMode() {
   const [dark, setDark] = useState(() => {
-    const stored = localStorage.getItem('pixeltools-theme')
+    const stored = localStorage.getItem('photo-pdf-tools-theme')
     if (stored) return stored === 'dark'
 
     return window.matchMedia('(prefers-color-scheme: dark)').matches
@@ -23,7 +23,7 @@ export function useDarkMode() {
     } else {
       root.classList.remove('dark')
     }
-    localStorage.setItem('pixeltools-theme', dark ? 'dark' : 'light')
+    localStorage.setItem('photo-pdf-tools-theme', dark ? 'dark' : 'light')
   }, [dark])
 
   const toggle = () => setDark((prev) => !prev)

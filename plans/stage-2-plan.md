@@ -1,4 +1,4 @@
-# PixelTools — Stage 2 Plan: Implement all Image Tools
+# Photo-PDF Tools — Stage 2 Plan: Implement all Image Tools
 
 **Goal:** Every image tool page becomes fully functional — real processing, previews,
 file info, download, loading states and clear errors. All processing stays in the

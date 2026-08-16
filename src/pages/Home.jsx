@@ -45,7 +45,7 @@ export default function Home() {
   return (
     <div>
       <Seo
-        description="PixelTools — all your image and PDF tools in one place. Compress, resize, crop and convert images; merge, split and compress PDFs. Free and private."
+        description="Photo-PDF Tools — all your image and PDF tools in one place. Compress, resize, crop and convert images; merge, split and compress PDFs. Free and private."
       />
 
       {/* HERO */}
@@ -66,7 +66,7 @@ export default function Home() {
           </span>
 
           <h1 className="mt-6 text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
-            PixelTools
+            Photo-PDF Tools
           </h1>
           <p className="mt-4 text-xl font-medium text-primary-100 sm:text-2xl">
             All Your Image &amp; PDF Tools in One Place
@@ -95,7 +95,7 @@ export default function Home() {
       </section>
 
       {/* TRUST BADGES */}
-      <section className="mt-12 grid gap-6 sm:grid-cols-3" aria-label="Why use PixelTools">
+      <section className="mt-12 grid gap-6 sm:grid-cols-3" aria-label="Why use Photo-PDF Tools">
         {trustBadges.map((badge) => (
           <div
             key={badge.title}
@@ -159,7 +159,7 @@ export default function Home() {
               Your files stay on your device
             </h2>
             <p className="mt-4 text-slate-600 dark:text-slate-400">
-              PixelTools runs entirely in your browser using open-source libraries. Your
+              Photo-PDF Tools runs entirely in your browser using open-source libraries. Your
               images and documents are never uploaded to a server, never stored, and never
               seen by anyone else.
             </p>

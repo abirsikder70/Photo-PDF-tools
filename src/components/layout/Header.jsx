@@ -28,11 +28,11 @@ export default function Header() {
         <Link
           to="/"
           className="focus-ring flex items-center gap-2 rounded-lg"
-          aria-label="PixelTools — home"
+          aria-label="Photo-PDF Tools — home"
           onClick={() => setOpen(false)}
         >
           <Logo className="h-8 w-8" />
-          <span className="text-lg font-bold tracking-tight">PixelTools</span>
+          <span className="text-lg font-bold tracking-tight">Photo-PDF Tools</span>
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex" aria-label="Primary">

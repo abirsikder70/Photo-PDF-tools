@@ -8,7 +8,7 @@ import { useEffect } from 'react'
  */
 export default function Seo({ title, description }) {
   useEffect(() => {
-    const fullTitle = title ? `${title} — PixelTools` : 'PixelTools'
+    const fullTitle = title ? `${title} — Photo-PDF Tools` : 'Photo-PDF Tools'
     document.title = fullTitle
 
     function setMeta(attr, name, content) {

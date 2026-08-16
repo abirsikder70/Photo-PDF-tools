@@ -1,4 +1,4 @@
-# PixelTools
+# Photo-PDF Tools
 
 An all-in-one Image and PDF tools website. Free, private and fast — every file is
 processed locally in your browser and never uploaded to a server.
