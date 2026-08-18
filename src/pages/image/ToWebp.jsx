@@ -50,13 +50,13 @@ export default function ToWebp() {
         <div className="space-y-6">
           <FilePreview file={file} large dimensions={dimensions} label="Original" />
 
-          <div className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
+          <div className="card p-5">
             <label
               htmlFor="webp-quality"
-              className="flex items-center justify-between text-sm font-medium text-slate-700 dark:text-slate-300"
+              className="field-label flex items-center justify-between"
             >
               <span>Quality</span>
-              <span className="rounded-full bg-primary-50 px-2.5 py-0.5 font-semibold text-primary-700 dark:bg-primary-500/10 dark:text-primary-400">
+              <span className="chip-value">
                 {Math.round(quality * 100)}%
               </span>
             </label>
@@ -80,7 +80,7 @@ export default function ToWebp() {
               type="button"
               onClick={convert}
               disabled={loading}
-              className="focus-ring mt-5 inline-flex items-center justify-center gap-2 rounded-xl bg-primary-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-primary-700 disabled:opacity-60"
+              className="btn-primary mt-5"
             >
               Convert to WebP
             </button>

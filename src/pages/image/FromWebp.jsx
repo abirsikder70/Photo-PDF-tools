@@ -44,10 +44,10 @@ export default function FromWebp() {
   }
 
   const optionClass = (value) =>
-    `rounded-lg px-4 py-2 text-sm font-medium transition-colors ${
+    `rounded-lg px-4 py-2 text-[13px] font-medium transition-colors ${
       format === value
-        ? 'bg-primary-600 text-white'
-        : 'bg-slate-100 text-slate-600 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700'
+        ? 'choice-on'
+        : 'choice-off'
     }`
 
   return (
@@ -63,10 +63,8 @@ export default function FromWebp() {
         <div className="space-y-6">
           <FilePreview file={file} large dimensions={dimensions} label="Original" />
 
-          <div className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
-            <p className="text-sm font-medium text-slate-700 dark:text-slate-300">
-              Convert to:
-            </p>
+          <div className="card p-5">
+            <p className="field-label">Convert to:</p>
             <div className="mt-3 inline-flex gap-2" role="radiogroup" aria-label="Output format">
               <button type="button" onClick={() => setFormat('jpg')} className={optionClass('jpg')} role="radio" aria-checked={format === 'jpg'}>
                 JPG
@@ -76,7 +74,7 @@ export default function FromWebp() {
               </button>
             </div>
             {format === 'jpg' && (
-              <p className="mt-4 rounded-lg bg-amber-50 px-3 py-2 text-xs text-amber-700 dark:bg-amber-950/40 dark:text-amber-400">
+              <p className="mt-4 rounded-lg border border-amber-200/70 bg-amber-50/60 px-3 py-2 text-xs leading-relaxed text-amber-800 dark:border-amber-500/15 dark:bg-amber-500/5 dark:text-amber-300">
                 Transparent areas are filled with white, since JPG does not support
                 transparency.
               </p>
@@ -86,7 +84,7 @@ export default function FromWebp() {
               type="button"
               onClick={convert}
               disabled={loading}
-              className="focus-ring mt-5 inline-flex items-center justify-center gap-2 rounded-xl bg-primary-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-primary-700 disabled:opacity-60"
+              className="btn-primary mt-5"
             >
               Convert to {format.toUpperCase()}
             </button>

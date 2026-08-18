@@ -30,32 +30,36 @@ export default function About() {
       />
 
       <header className="mb-10">
-        <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">About Photo-PDF Tools</h1>
-        <p className="mt-4 max-w-2xl text-lg text-slate-600 dark:text-slate-400">
+        <h1 className="text-3xl font-semibold tracking-[-0.02em] sm:text-4xl">About Photo-PDF Tools</h1>
+        <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-500 sm:text-lg dark:text-slate-400">
           Photo-PDF Tools is an all-in-one suite of image and PDF tools. Whether you need to
           compress a photo, convert a format or organize a PDF, you can do it here — fast,
           free and completely private.
         </p>
       </header>
 
-      <section className="grid gap-6 md:grid-cols-3">
+      <section className="grid gap-4 md:grid-cols-3">
         {values.map((value) => (
           <div
             key={value.title}
-            className="rounded-2xl border border-slate-200 bg-white p-6 dark:border-slate-800 dark:bg-slate-900"
+            className="flex gap-4 rounded-2xl border border-slate-200/80 bg-white p-5 shadow-card dark:border-slate-800 dark:bg-slate-900"
           >
-            <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-primary-50 text-primary-600 dark:bg-primary-500/10 dark:text-primary-400">
+            <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-slate-200/70 bg-slate-50 text-primary-600 dark:border-slate-700/60 dark:bg-slate-800/60 dark:text-primary-400">
               <Icon name={value.icon} className="h-5 w-5" />
             </span>
-            <h2 className="mt-4 text-base font-semibold">{value.title}</h2>
-            <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">{value.text}</p>
+            <div>
+              <h2 className="text-[15px] font-semibold tracking-tight">{value.title}</h2>
+              <p className="mt-1 text-sm leading-relaxed text-slate-500 dark:text-slate-400">
+                {value.text}
+              </p>
+            </div>
           </div>
         ))}
       </section>
 
-      <section className="mt-12 rounded-3xl border border-slate-200 bg-white p-8 dark:border-slate-800 dark:bg-slate-900">
-        <h2 className="text-2xl font-bold tracking-tight">How it works</h2>
-        <ol className="mt-6 space-y-6">
+      <section className="mt-14 rounded-3xl border border-slate-200/80 bg-white p-8 shadow-card sm:p-10 dark:border-slate-800 dark:bg-slate-900">
+        <h2 className="text-2xl font-semibold tracking-[-0.02em]">How it works</h2>
+        <ol className="mt-7 space-y-7">
           {[
             {
               step: 1,
@@ -74,36 +78,49 @@ export default function About() {
             },
           ].map((item) => (
             <li key={item.step} className="flex gap-4">
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary-600 text-sm font-bold text-white">
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-b from-primary-500 to-primary-600 text-[13px] font-semibold text-white shadow-glow">
                 {item.step}
               </span>
               <div>
-                <h3 className="font-semibold">{item.title}</h3>
-                <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">{item.text}</p>
+                <h3 className="text-[15px] font-semibold tracking-tight">{item.title}</h3>
+                <p className="mt-1 text-sm leading-relaxed text-slate-500 dark:text-slate-400">{item.text}</p>
               </div>
             </li>
           ))}
         </ol>
       </section>
 
-      <section className="mt-12 rounded-3xl bg-gradient-to-r from-primary-600 to-violet-600 px-6 py-12 text-center text-white">
-        <h2 className="text-2xl font-bold tracking-tight">Start using Photo-PDF Tools today</h2>
-        <p className="mx-auto mt-2 max-w-xl text-primary-100">
-          It is free, private and takes seconds.
-        </p>
-        <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <Link
-            to={categories.image.path}
-            className="focus-ring inline-flex w-full items-center justify-center rounded-xl bg-white px-6 py-3 font-semibold text-primary-700 shadow-lg hover:-translate-y-0.5 sm:w-auto"
-          >
-            Explore Image Tools
-          </Link>
-          <Link
-            to={categories.pdf.path}
-            className="focus-ring inline-flex w-full items-center justify-center rounded-xl border border-white/30 bg-white/10 px-6 py-3 font-semibold backdrop-blur hover:bg-white/20 sm:w-auto"
-          >
-            Explore PDF Tools
-          </Link>
+      <section className="relative mt-14 overflow-hidden rounded-3xl bg-slate-950 px-6 py-14 text-center dark:bg-slate-900">
+        <div
+          aria-hidden="true"
+          className="bg-dot-grid pointer-events-none absolute inset-0 opacity-60 [mask-image:radial-gradient(ellipse_65%_65%_at_50%_50%,black_30%,transparent_75%)]"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -bottom-32 left-1/2 h-80 w-[36rem] -translate-x-1/2 rounded-full bg-primary-600/25 blur-3xl"
+        />
+
+        <div className="relative">
+          <h2 className="text-2xl font-semibold tracking-[-0.02em] text-white sm:text-3xl">
+            Start using Photo-PDF Tools today
+          </h2>
+          <p className="mx-auto mt-2 max-w-xl text-slate-400">
+            It is free, private and takes seconds.
+          </p>
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <Link
+              to={categories.image.path}
+              className="focus-ring inline-flex h-11 w-full items-center justify-center rounded-xl bg-white px-6 text-sm font-semibold text-slate-950 shadow-lift transition-all hover:-translate-y-0.5 hover:bg-slate-100 active:scale-[0.98] sm:w-auto dark:text-slate-900"
+            >
+              Explore Image Tools
+            </Link>
+            <Link
+              to={categories.pdf.path}
+              className="focus-ring inline-flex h-11 w-full items-center justify-center rounded-xl border border-white/15 bg-white/5 px-6 text-sm font-semibold text-white backdrop-blur transition-colors hover:border-white/25 hover:bg-white/10 sm:w-auto"
+            >
+              Explore PDF Tools
+            </Link>
+          </div>
         </div>
       </section>
     </div>

@@ -30,14 +30,14 @@ export default function PageThumbnail({
     <img src={src} alt={`Page ${page}`} className="block w-full object-contain" />
   ) : (
     <div className="flex h-44 items-center justify-center">
-      <span className="h-6 w-6 animate-spin rounded-full border-2 border-primary-200 border-t-primary-600" />
+      <span className="h-6 w-6 animate-spin rounded-full border-2 border-primary-500/25 border-t-primary-600 dark:border-t-primary-400" />
     </div>
   )
 
-  const outerClass = `relative w-full overflow-hidden rounded-xl border bg-white transition-shadow dark:bg-slate-900 ${
+  const outerClass = `relative w-full overflow-hidden rounded-xl border bg-white transition-all duration-200 dark:bg-slate-900 ${
     selected
-      ? 'border-primary-500 ring-2 ring-primary-500/60'
-      : 'border-slate-200 dark:border-slate-700'
+      ? 'border-primary-500 shadow-glow ring-1 ring-primary-500/40'
+      : 'border-slate-200/80 shadow-card hover:border-slate-300 hover:shadow-lift dark:border-slate-700/80 dark:hover:border-slate-600'
   } ${className || ''}`
 
   const inner = onClick ? (
@@ -63,12 +63,12 @@ export default function PageThumbnail({
       onDragOver={onDragOver}
       onDrop={onDrop}
     >
-      <span className="absolute left-2 top-2 z-10 rounded-md bg-slate-900/70 px-2 py-0.5 text-xs font-semibold text-white">
+      <span className="absolute left-2 top-2 z-10 rounded-md bg-slate-950/60 px-2 py-0.5 text-[11px] font-semibold tabular-nums text-white backdrop-blur-sm">
         {page}
       </span>
       {inner}
       {footer && (
-        <div className="border-t border-slate-200 bg-white p-2 dark:border-slate-700 dark:bg-slate-900">
+        <div className="border-t border-slate-200/80 bg-slate-50/60 p-2 dark:border-slate-700/80 dark:bg-slate-900">
           {footer}
         </div>
       )}

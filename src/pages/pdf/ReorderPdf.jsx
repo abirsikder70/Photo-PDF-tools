@@ -76,7 +76,7 @@ export default function ReorderPdf() {
   }
 
   const actionButtonClass =
-    'focus-ring rounded-lg border border-slate-200 p-1.5 text-slate-500 transition-colors hover:bg-slate-50 disabled:opacity-30 dark:border-slate-700 dark:text-slate-400 dark:hover:bg-slate-800'
+    'icon-btn-xs'
 
   return (
     <ToolPageLayout tool={tool}>
@@ -97,15 +97,15 @@ export default function ReorderPdf() {
                 type="button"
                 onClick={reorder}
                 disabled={loading}
-                className="focus-ring inline-flex items-center justify-center gap-2 rounded-xl bg-primary-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-primary-700 disabled:opacity-60"
+                className="btn-primary"
               >
-                <Icon name="reorder" className="h-5 w-5" />
+                <Icon name="reorder" className="h-4 w-4" />
                 Reorder PDF
               </button>
               <button
                 type="button"
                 onClick={() => setOrder(Array.from({ length: numPages }, (_, i) => i + 1))}
-                className="focus-ring rounded-lg text-sm font-medium text-slate-500 underline-offset-2 hover:text-primary-600 hover:underline dark:text-slate-400"
+                className="focus-ring rounded-lg text-sm font-medium text-slate-500 underline-offset-4 transition-colors hover:text-primary-600 hover:underline dark:text-slate-400"
               >
                 Reset order
               </button>

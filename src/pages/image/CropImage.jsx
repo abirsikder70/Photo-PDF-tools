@@ -63,7 +63,7 @@ export default function CropImage() {
           <FilePreview file={file} dimensions={dimensions} label="Original" />
 
           {previewUrl && (
-            <div className="relative h-96 w-full overflow-hidden rounded-2xl bg-slate-950">
+            <div className="relative h-96 w-full overflow-hidden rounded-2xl border border-slate-200/80 shadow-card dark:border-slate-800">
               <Cropper
                 image={previewUrl}
                 crop={crop}
@@ -86,7 +86,7 @@ export default function CropImage() {
             type="button"
             onClick={cropImage}
             disabled={loading}
-            className="focus-ring inline-flex items-center justify-center gap-2 rounded-xl bg-primary-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-primary-700 disabled:opacity-60"
+            className="btn-primary"
           >
             Crop Image
           </button>

@@ -46,7 +46,7 @@ export default function PngToJpg() {
         <div className="space-y-6">
           <FilePreview file={file} large dimensions={dimensions} label="Original" />
 
-          <p className="rounded-lg bg-amber-50 px-4 py-3 text-sm text-amber-700 dark:bg-amber-950/40 dark:text-amber-400">
+          <p className="rounded-xl border border-amber-200/70 bg-amber-50/60 px-4 py-3 text-sm leading-relaxed text-amber-800 dark:border-amber-500/15 dark:bg-amber-500/5 dark:text-amber-300">
             Tip: transparent areas are filled with white, since JPG does not support
             transparency.
           </p>
@@ -55,7 +55,7 @@ export default function PngToJpg() {
             type="button"
             onClick={convert}
             disabled={loading}
-            className="focus-ring inline-flex items-center justify-center gap-2 rounded-xl bg-primary-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-primary-700 disabled:opacity-60"
+            className="btn-primary"
           >
             Convert to JPG
           </button>

@@ -16,26 +16,26 @@ export default function Header() {
   const [open, setOpen] = useState(false)
 
   const navLinkClass = ({ isActive }) =>
-    `focus-ring rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
+    `focus-ring rounded-lg px-3 py-1.5 text-[13.5px] font-medium transition-colors ${
       isActive
-        ? 'bg-primary-50 text-primary-700 dark:bg-primary-500/10 dark:text-primary-400'
-        : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white'
+        ? 'bg-primary-50/80 text-primary-700 dark:bg-primary-500/10 dark:text-primary-300'
+        : 'text-slate-600 hover:bg-slate-100/70 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800/60 dark:hover:text-slate-100'
     }`
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/80 backdrop-blur-md dark:border-slate-800 dark:bg-slate-950/80">
+    <header className="sticky top-0 z-50 border-b border-slate-200/70 bg-white/75 backdrop-blur-xl backdrop-saturate-150 dark:border-slate-800/80 dark:bg-slate-950/75">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
         <Link
           to="/"
-          className="focus-ring flex items-center gap-2 rounded-lg"
+          className="focus-ring group flex items-center gap-2.5 rounded-lg"
           aria-label="Photo-PDF Tools — home"
           onClick={() => setOpen(false)}
         >
-          <Logo className="h-8 w-8" />
-          <span className="text-lg font-bold tracking-tight">Photo-PDF Tools</span>
+          <Logo className="h-7 w-7 transition-transform duration-300 group-hover:scale-105" />
+          <span className="text-[15px] font-semibold tracking-tight">Photo-PDF Tools</span>
         </Link>
 
-        <nav className="hidden items-center gap-1 md:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-0.5 md:flex" aria-label="Primary">
           {navLinks.map((link) => (
             <NavLink key={link.to} to={link.to} className={navLinkClass}>
               {link.label}
@@ -43,19 +43,19 @@ export default function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1.5">
           <button
             type="button"
             onClick={toggle}
             aria-label={dark ? 'Switch to light mode' : 'Switch to dark mode'}
-            className="focus-ring rounded-lg p-2 text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white"
+            className="focus-ring rounded-lg p-2 text-slate-500 transition-colors hover:bg-slate-100/70 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800/60 dark:hover:text-slate-100"
           >
-            {dark ? <Icon name="sun" className="h-5 w-5" /> : <Icon name="moon" className="h-5 w-5" />}
+            {dark ? <Icon name="sun" className="h-[18px] w-[18px]" /> : <Icon name="moon" className="h-[18px] w-[18px]" />}
           </button>
 
           <Link
             to="/image-tools"
-            className="focus-ring hidden rounded-xl bg-primary-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-primary-700 sm:inline-flex"
+            className="btn-primary-sm mr-1 hidden sm:inline-flex"
           >
             Get Started
           </Link>
@@ -65,9 +65,9 @@ export default function Header() {
             onClick={() => setOpen((prev) => !prev)}
             aria-label={open ? 'Close menu' : 'Open menu'}
             aria-expanded={open}
-            className="focus-ring rounded-lg p-2 text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800 md:hidden"
+            className="focus-ring rounded-lg p-2 text-slate-600 hover:bg-slate-100/70 dark:text-slate-400 dark:hover:bg-slate-800/60 md:hidden"
           >
-            <Icon name={open ? 'close' : 'menu'} className="h-6 w-6" />
+            <Icon name={open ? 'close' : 'menu'} className="h-[22px] w-[22px]" />
           </button>
         </div>
       </div>
@@ -75,15 +75,17 @@ export default function Header() {
       {open && (
         <nav
           aria-label="Mobile"
-          className="border-t border-slate-200 bg-white px-4 py-3 md:hidden dark:border-slate-800 dark:bg-slate-950"
+          className="border-t border-slate-200/70 bg-white/95 px-4 py-3 backdrop-blur-xl md:hidden dark:border-slate-800/80 dark:bg-slate-950/95"
         >
-          <ul className="flex flex-col gap-1">
+          <ul className="flex flex-col gap-0.5">
             {navLinks.map((link) => (
               <li key={link.to}>
                 <NavLink
                   to={link.to}
                   onClick={() => setOpen(false)}
-                  className={navLinkClass}
+                  className={({ isActive }) =>
+                    `block ${navLinkClass({ isActive })} px-3 py-2.5`
+                  }
                 >
                   {link.label}
                 </NavLink>

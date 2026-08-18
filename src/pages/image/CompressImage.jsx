@@ -56,13 +56,13 @@ export default function CompressImage() {
         <div className="space-y-6">
           <FilePreview file={file} large dimensions={dimensions} label="Original" />
 
-          <div className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
+          <div className="card p-5">
             <label
               htmlFor="quality"
-              className="flex items-center justify-between text-sm font-medium text-slate-700 dark:text-slate-300"
+              className="field-label flex items-center justify-between"
             >
               <span>Quality</span>
-              <span className="rounded-full bg-primary-50 px-2.5 py-0.5 font-semibold text-primary-700 dark:bg-primary-500/10 dark:text-primary-400">
+              <span className="chip-value">
                 {Math.round(quality * 100)}%
               </span>
             </label>
@@ -83,7 +83,7 @@ export default function CompressImage() {
             </div>
 
             {convertsToJpg && (
-              <p className="mt-4 rounded-lg bg-amber-50 px-3 py-2 text-xs text-amber-700 dark:bg-amber-950/40 dark:text-amber-400">
+              <p className="mt-4 rounded-lg border border-amber-200/70 bg-amber-50/60 px-3 py-2 text-xs leading-relaxed text-amber-800 dark:border-amber-500/15 dark:bg-amber-500/5 dark:text-amber-300">
                 Note: PNG is a lossless format, so it is converted to JPG at your chosen
                 quality to actually reduce the file size.
               </p>
@@ -93,7 +93,7 @@ export default function CompressImage() {
               type="button"
               onClick={compress}
               disabled={loading}
-              className="focus-ring mt-5 inline-flex items-center justify-center gap-2 rounded-xl bg-primary-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-primary-700 disabled:opacity-60"
+              className="btn-primary mt-5"
             >
               Compress Image
             </button>

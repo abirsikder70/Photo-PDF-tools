@@ -16,7 +16,7 @@ export default function Layout() {
         Skip to content
       </a>
       <Header />
-      <main id="main-content" tabIndex={-1} className="mx-auto w-full max-w-6xl flex-1 px-4 py-10 sm:px-6">
+      <main id="main-content" tabIndex={-1} className="mx-auto w-full max-w-6xl flex-1 px-4 py-12 sm:px-6">
         <Outlet />
       </main>
       <Footer />

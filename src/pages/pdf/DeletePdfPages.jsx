@@ -98,15 +98,15 @@ export default function DeletePdfPages() {
                 type="button"
                 onClick={remove}
                 disabled={loading}
-                className="focus-ring inline-flex items-center justify-center gap-2 rounded-xl bg-red-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-red-700 disabled:opacity-60"
+                className="focus-ring inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-red-600 px-5 text-sm font-semibold text-white shadow-lg shadow-red-600/25 outline-none transition-all duration-200 hover:bg-red-500 active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none dark:bg-red-600 dark:hover:bg-red-500"
               >
-                <Icon name="trash" className="h-5 w-5" />
+                <Icon name="trash" className="h-4 w-4" />
                 Delete selected ({selected.size})
               </button>
               <button
                 type="button"
                 onClick={toggleAll}
-                className="focus-ring rounded-lg text-sm font-medium text-slate-500 underline-offset-2 hover:text-primary-600 hover:underline dark:text-slate-400"
+                className="focus-ring rounded-lg text-sm font-medium text-slate-500 underline-offset-4 transition-colors hover:text-primary-600 hover:underline dark:text-slate-400"
               >
                 {selected.size === numPages ? 'Clear selection' : 'Select all'}
               </button>
@@ -130,7 +130,7 @@ export default function DeletePdfPages() {
                   footer={
                     <div className="flex items-center justify-center gap-1.5">
                       {isSelected ? (
-                        <span className="inline-flex items-center gap-1 rounded-full bg-red-100 px-2 py-0.5 text-xs font-semibold text-red-700 dark:bg-red-950/50 dark:text-red-400">
+                        <span className="inline-flex items-center gap-1 rounded-full border border-red-200/70 bg-red-50 px-2 py-0.5 text-[11px] font-semibold text-red-700 dark:border-red-900/50 dark:bg-red-950/30 dark:text-red-400">
                           <Icon name="trash" className="h-3 w-3" />
                           delete
                         </span>

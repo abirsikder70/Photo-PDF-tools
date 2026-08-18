@@ -10,7 +10,7 @@ export default function RouteLoader() {
       aria-live="polite"
     >
       <span
-        className="h-10 w-10 animate-spin rounded-full border-2 border-primary-200 border-t-primary-600"
+        className="h-9 w-9 animate-spin rounded-full border-[3px] border-primary-500/20 border-t-primary-600 dark:border-primary-500/25 dark:border-t-primary-400"
         aria-label="Loading"
       />
       <span className="sr-only">Loading…</span>

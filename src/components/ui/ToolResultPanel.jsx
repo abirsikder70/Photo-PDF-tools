@@ -47,12 +47,12 @@ export default function ToolResultPanel({
   return (
     <section
       aria-label={heading}
-      className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900"
+      className="rounded-2xl border border-slate-200/80 bg-white p-5 shadow-card dark:border-slate-800 dark:bg-slate-900"
     >
       <div className="flex flex-wrap items-center justify-between gap-2">
-        <h2 className="text-lg font-semibold">{heading}</h2>
+        <h2 className="text-base font-semibold tracking-tight">{heading}</h2>
         {savingsPct > 0 && (
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-400">
+          <span className="badge-success">
             <Icon name="check" className="h-3.5 w-3.5" />
             {savingsPct}% smaller
           </span>
@@ -64,17 +64,17 @@ export default function ToolResultPanel({
         <img
           src={url}
           alt={`${heading} image`}
-          className="mt-4 max-h-72 w-auto rounded-lg object-contain"
+          className="mt-4 max-h-72 w-auto rounded-xl object-contain shadow-card"
         />
       )}
 
       <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-slate-600 dark:text-slate-400">
         {width && height && (
-          <span>
+          <span className="tabular-nums">
             {width} × {height} px
           </span>
         )}
-        <span className="font-medium text-slate-800 dark:text-white">{formatBytes(blob.size)}</span>
+        <span className="font-semibold tabular-nums text-slate-800 dark:text-white">{formatBytes(blob.size)}</span>
         {originalSize && (
           <span className="text-slate-500 dark:text-slate-500">
             from {formatBytes(originalSize)}
@@ -84,7 +84,7 @@ export default function ToolResultPanel({
 
       {extra && <div className="mt-4">{extra}</div>}
 
-      <div className="mt-4">
+      <div className="mt-5">
         <DownloadButton href={url} fileName={fileName} />
       </div>
     </section>

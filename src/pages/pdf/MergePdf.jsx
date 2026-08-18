@@ -81,7 +81,7 @@ export default function MergePdf() {
       {files.length > 0 && (
         <div className="mt-6 space-y-3">
           <div className="flex items-center justify-between">
-            <h2 className="text-base font-semibold">
+            <h2 className="text-[15px] font-semibold tracking-tight">
               {files.length} file{files.length === 1 ? '' : 's'} to merge
             </h2>
             <button
@@ -90,7 +90,7 @@ export default function MergePdf() {
                 setFiles([])
                 setResult(null)
               }}
-              className="focus-ring rounded-lg text-sm font-medium text-slate-500 underline-offset-2 hover:text-red-600 hover:underline dark:text-slate-400"
+              className="focus-ring rounded-lg text-sm font-medium text-slate-500 underline-offset-4 transition-colors hover:text-red-600 hover:underline dark:text-slate-400"
             >
               Clear all
             </button>
@@ -98,7 +98,7 @@ export default function MergePdf() {
 
           {files.map((file, index) => (
             <div key={`${file.name}-${index}`} className="flex items-center gap-3">
-              <span className="w-6 shrink-0 text-center text-sm font-semibold text-slate-400">
+              <span className="w-6 shrink-0 text-center text-sm font-semibold tabular-nums text-slate-400">
                 {index + 1}.
               </span>
               <div className="min-w-0 flex-1">
@@ -110,7 +110,7 @@ export default function MergePdf() {
                   onClick={() => moveFile(index, -1)}
                   disabled={index === 0}
                   aria-label={`Move ${file.name} up`}
-                  className="focus-ring rounded-lg border border-slate-200 p-2 text-slate-500 transition-colors hover:bg-slate-50 disabled:opacity-30 dark:border-slate-700 dark:text-slate-400 dark:hover:bg-slate-800"
+                  className="icon-btn-xs"
                 >
                   <Icon name="chevronRight" className="h-4 w-4 -rotate-90" />
                 </button>
@@ -119,7 +119,7 @@ export default function MergePdf() {
                   onClick={() => moveFile(index, 1)}
                   disabled={index === files.length - 1}
                   aria-label={`Move ${file.name} down`}
-                  className="focus-ring rounded-lg border border-slate-200 p-2 text-slate-500 transition-colors hover:bg-slate-50 disabled:opacity-30 dark:border-slate-700 dark:text-slate-400 dark:hover:bg-slate-800"
+                  className="icon-btn-xs"
                 >
                   <Icon name="chevronRight" className="h-4 w-4 rotate-90" />
                 </button>
@@ -127,7 +127,7 @@ export default function MergePdf() {
                   type="button"
                   onClick={() => removeFile(index)}
                   aria-label={`Remove ${file.name}`}
-                  className="focus-ring rounded-lg border border-slate-200 p-2 text-red-500 transition-colors hover:bg-red-50 dark:border-slate-700 dark:hover:bg-red-950/40"
+                  className="focus-ring rounded-md border border-red-200/70 bg-white p-1.5 text-red-500 transition-colors hover:bg-red-50 dark:border-red-900/40 dark:bg-slate-900 dark:hover:bg-red-950/40"
                 >
                   <Icon name="trash" className="h-4 w-4" />
                 </button>
@@ -139,9 +139,9 @@ export default function MergePdf() {
             type="button"
             onClick={merge}
             disabled={loading}
-            className="focus-ring mt-2 inline-flex items-center justify-center gap-2 rounded-xl bg-primary-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-primary-700 disabled:opacity-60"
+            className="btn-primary mt-2"
           >
-            <Icon name="merge" className="h-5 w-5" />
+            <Icon name="merge" className="h-4 w-4" />
             Merge PDFs
           </button>
         </div>

@@ -91,8 +91,7 @@ export default function SplitPdf() {
     }
   }
 
-  const inputClass =
-    'focus-ring w-full rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-800 placeholder:text-slate-400 dark:border-slate-700 dark:bg-slate-900 dark:text-white'
+  const inputClass = 'input-field'
 
   return (
     <ToolPageLayout tool={tool}>
@@ -107,10 +106,10 @@ export default function SplitPdf() {
         <div className="space-y-6">
           <FilePreview file={file} label="PDF" />
 
-          <div className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
+          <div className="card p-5">
             <label
               htmlFor="split-range"
-              className="block text-sm font-medium text-slate-700 dark:text-slate-300"
+              className="field-label block"
             >
               Page range (e.g. 1-3,5,8-10)
             </label>
@@ -123,12 +122,12 @@ export default function SplitPdf() {
               className={`${inputClass} mt-1.5`}
             />
 
-            <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
               <button
                 type="button"
                 onClick={extract}
                 disabled={loading}
-                className="focus-ring rounded-xl bg-primary-600 px-4 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-primary-700 disabled:opacity-60"
+                className="btn-primary"
               >
                 Extract to new PDF ({pageNums.length})
               </button>
@@ -136,7 +135,7 @@ export default function SplitPdf() {
                 type="button"
                 onClick={splitIntoPages}
                 disabled={loading}
-                className="focus-ring rounded-xl border border-slate-300 px-4 py-3 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-50 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-800 disabled:opacity-60"
+                className="btn-secondary"
               >
                 Split into single pages (ZIP)
               </button>
@@ -147,7 +146,7 @@ export default function SplitPdf() {
           </div>
 
           <div>
-            <h2 className="mb-3 text-base font-semibold">
+            <h2 className="mb-3 text-[15px] font-semibold tracking-tight">
               Pages ({selected.size} selected)
             </h2>
             <div className="grid grid-cols-3 gap-3 sm:grid-cols-4 md:grid-cols-5">

@@ -99,17 +99,25 @@ export default function FileUploader({
         }}
         onDragLeave={() => setDragActive(false)}
         onDrop={handleDrop}
-        className={`focus-ring flex cursor-pointer flex-col items-center justify-center rounded-2xl border-2 border-dashed px-6 py-12 text-center transition-colors ${
+        className={`focus-ring flex cursor-pointer flex-col items-center justify-center rounded-2xl border-2 border-dashed px-6 py-14 text-center transition-all duration-200 ${
           dragActive
-            ? 'border-primary-500 bg-primary-50 dark:border-primary-400 dark:bg-primary-500/10'
-            : 'border-slate-300 bg-slate-50 hover:border-primary-400 hover:bg-primary-50/50 dark:border-slate-700 dark:bg-slate-900 dark:hover:border-primary-600 dark:hover:bg-primary-500/5'
+            ? 'scale-[1.01] border-primary-500 bg-primary-50/70 shadow-glow dark:border-primary-400 dark:bg-primary-500/10'
+            : 'border-slate-300/90 bg-white shadow-card hover:border-primary-400/70 hover:bg-primary-50/30 dark:border-slate-700 dark:bg-slate-900 dark:hover:border-primary-500/50 dark:hover:bg-primary-500/5'
         }`}
       >
-        <span className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-full bg-white text-primary-600 shadow-sm dark:bg-slate-800 dark:text-primary-400">
-          <Icon name="upload" className="h-7 w-7" />
+        <span
+          className={`mb-4 inline-flex h-14 w-14 items-center justify-center rounded-2xl border transition-all duration-200 ${
+            dragActive
+              ? 'border-primary-200 bg-primary-100 text-primary-700 dark:border-primary-500/30 dark:bg-primary-500/15 dark:text-primary-300'
+              : 'border-slate-200/80 bg-slate-50 text-primary-600 dark:border-slate-700/60 dark:bg-slate-800/60 dark:text-primary-400'
+          }`}
+        >
+          <Icon name="upload" className="h-6 w-6" />
         </span>
-        <p className="text-base font-semibold text-slate-800 dark:text-white">{title}</p>
-        <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">{hint}</p>
+        <p className="text-base font-semibold tracking-tight text-slate-800 dark:text-white">
+          {title}
+        </p>
+        <p className="mt-1.5 text-sm text-slate-500 dark:text-slate-400">{hint}</p>
 
         <input
           ref={inputRef}

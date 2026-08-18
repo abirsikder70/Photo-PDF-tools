@@ -65,8 +65,7 @@ export default function ResizeImage() {
     }
   }
 
-  const inputClass =
-    'focus-ring w-full rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-800 placeholder:text-slate-400 dark:border-slate-700 dark:bg-slate-900 dark:text-white'
+  const inputClass = 'input-field'
 
   return (
     <ToolPageLayout tool={tool}>
@@ -81,20 +80,16 @@ export default function ResizeImage() {
         <div className="space-y-6">
           <FilePreview file={file} large dimensions={dimensions} label="Original" />
 
-          <div className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
+          <div className="card p-5">
             <div className="flex flex-wrap items-center gap-3 text-sm">
-              <span className="font-medium text-slate-700 dark:text-slate-300">Resize by:</span>
-              <div className="inline-flex rounded-xl bg-slate-100 p-1 dark:bg-slate-800">
+              <span className="field-label">Resize by:</span>
+              <div className="seg">
                 {['pixels', 'percent'].map((u) => (
                   <button
                     key={u}
                     type="button"
                     onClick={() => setUnit(u)}
-                    className={`rounded-lg px-4 py-1.5 text-sm font-medium transition-colors ${
-                      unit === u
-                        ? 'bg-white text-primary-700 shadow-sm dark:bg-slate-900 dark:text-primary-400'
-                        : 'text-slate-500 hover:text-slate-700 dark:text-slate-400'
-                    }`}
+                    className={unit === u ? 'seg-on px-3.5 py-1.5 text-[13px] font-medium' : 'seg-off'}
                   >
                     {u === 'pixels' ? 'Pixels' : 'Percent'}
                   </button>
@@ -104,7 +99,7 @@ export default function ResizeImage() {
 
             {unit === 'pixels' ? (
               <div className="mt-5 grid grid-cols-2 gap-4">
-                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300">
+                <label className="field-label block">
                   Width (px)
                   <input
                     type="number"
@@ -114,7 +109,7 @@ export default function ResizeImage() {
                     className={`${inputClass} mt-1.5`}
                   />
                 </label>
-                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300">
+                <label className="field-label block">
                   Height (px)
                   <input
                     type="number"
@@ -126,7 +121,7 @@ export default function ResizeImage() {
                 </label>
               </div>
             ) : (
-              <label className="mt-5 block text-sm font-medium text-slate-700 dark:text-slate-300">
+              <label className="field-label mt-5 block">
                 Percentage (%)
                 <input
                   type="number"
@@ -152,8 +147,8 @@ export default function ResizeImage() {
             )}
 
             {outWidth > 0 && outHeight > 0 && (
-              <p className="mt-4 rounded-lg bg-slate-50 px-3 py-2 text-xs text-slate-500 dark:bg-slate-800 dark:text-slate-400">
-                Output size: {outWidth} × {outHeight} px
+              <p className="mt-4 rounded-lg border border-slate-200/70 bg-slate-50/70 px-3 py-2 text-xs text-slate-500 dark:border-slate-700/60 dark:bg-slate-800/50 dark:text-slate-400">
+                Output size: <span className="font-semibold tabular-nums text-slate-700 dark:text-slate-200">{outWidth} × {outHeight} px</span>
               </p>
             )}
 
@@ -161,7 +156,7 @@ export default function ResizeImage() {
               type="button"
               onClick={resize}
               disabled={loading}
-              className="focus-ring mt-5 inline-flex items-center justify-center gap-2 rounded-xl bg-primary-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-primary-700 disabled:opacity-60"
+              className="btn-primary mt-5"
             >
               Resize Image
             </button>

@@ -7,8 +7,9 @@ import { Icon } from './Icons'
  * @param {string}      fileName  — suggested file name
  * @param {string}      [label]   — button text (default "Download")
  * @param {boolean}     [disabled]
+ * @param {boolean}     [small]   — render a compact button
  */
-export default function DownloadButton({ href, fileName, label = 'Download', disabled }) {
+export default function DownloadButton({ href, fileName, label = 'Download', disabled, small }) {
   function handleDownload() {
     if (!href) return
 
@@ -30,9 +31,9 @@ export default function DownloadButton({ href, fileName, label = 'Download', dis
       type="button"
       onClick={handleDownload}
       disabled={disabled || !href}
-      className="focus-ring inline-flex items-center justify-center gap-2 rounded-xl bg-primary-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-primary-700 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-primary-600 dark:hover:bg-primary-500"
+      className={small ? 'btn-primary-sm' : 'btn-primary'}
     >
-      <Icon name="download" className="h-5 w-5" />
+      <Icon name="download" className="h-4 w-4" />
       {label}
     </button>
   )

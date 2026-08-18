@@ -50,7 +50,7 @@ export default function JpgToPng() {
             type="button"
             onClick={convert}
             disabled={loading}
-            className="focus-ring inline-flex items-center justify-center gap-2 rounded-xl bg-primary-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-primary-700 disabled:opacity-60"
+            className="btn-primary"
           >
             Convert to PNG
           </button>

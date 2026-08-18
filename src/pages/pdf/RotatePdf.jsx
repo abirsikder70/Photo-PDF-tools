@@ -72,7 +72,7 @@ export default function RotatePdf() {
   }
 
   const iconButtonClass =
-    'focus-ring rounded-lg border border-slate-200 p-1.5 text-slate-500 transition-colors hover:bg-slate-50 dark:border-slate-700 dark:text-slate-400 dark:hover:bg-slate-800'
+    'icon-btn-xs'
 
   return (
     <ToolPageLayout tool={tool}>
@@ -93,16 +93,16 @@ export default function RotatePdf() {
                 type="button"
                 onClick={save}
                 disabled={loading}
-                className="focus-ring inline-flex items-center justify-center gap-2 rounded-xl bg-primary-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-primary-700 disabled:opacity-60"
+                className="btn-primary"
               >
-                <Icon name="rotate" className="h-5 w-5" />
+                <Icon name="rotate" className="h-4 w-4" />
                 Save rotated PDF
               </button>
               <button
                 type="button"
                 onClick={() => setRotations({})}
                 disabled={allAtZero}
-                className="focus-ring rounded-lg text-sm font-medium text-slate-500 underline-offset-2 hover:text-primary-600 hover:underline disabled:opacity-40 dark:text-slate-400"
+                className="focus-ring rounded-lg text-sm font-medium text-slate-500 underline-offset-4 transition-colors hover:text-primary-600 hover:underline disabled:opacity-40 dark:text-slate-400"
               >
                 Reset
               </button>

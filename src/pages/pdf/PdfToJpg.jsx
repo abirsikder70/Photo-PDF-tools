@@ -92,10 +92,10 @@ export default function PdfToJpg() {
         <div className="space-y-6">
           <FilePreview file={file} label="PDF" />
 
-          <div className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
+          <div className="card p-5">
             <div className="grid gap-5 sm:grid-cols-2">
               <div>
-                <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                <span className="field-label">
                   Output resolution
                 </span>
                 <div className="mt-3 grid grid-cols-2 gap-2">
@@ -106,8 +106,8 @@ export default function PdfToJpg() {
                       onClick={() => setScale(opt.value)}
                       className={`rounded-lg px-3 py-2 text-xs font-medium transition-colors ${
                         scale === opt.value
-                          ? 'bg-primary-600 text-white'
-                          : 'bg-slate-100 text-slate-600 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700'
+                          ? 'choice-on'
+                          : 'choice-off'
                       }`}
                     >
                       {opt.label}
@@ -119,10 +119,10 @@ export default function PdfToJpg() {
               <div>
                 <label
                   htmlFor="pj-quality"
-                  className="flex items-center justify-between text-sm font-medium text-slate-700 dark:text-slate-300"
+                  className="field-label flex items-center justify-between"
                 >
                   <span>JPG quality</span>
-                  <span className="rounded-full bg-primary-50 px-2.5 py-0.5 font-semibold text-primary-700 dark:bg-primary-500/10 dark:text-primary-400">
+                  <span className="chip-value">
                     {Math.round(quality * 100)}%
                   </span>
                 </label>
@@ -144,7 +144,7 @@ export default function PdfToJpg() {
               type="button"
               onClick={convert}
               disabled={loading}
-              className="focus-ring mt-6 inline-flex items-center justify-center gap-2 rounded-xl bg-primary-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-primary-700 disabled:opacity-60"
+              className="btn-primary mt-6"
             >
               Convert to JPG
             </button>
@@ -158,13 +158,13 @@ export default function PdfToJpg() {
           {results.length > 0 && (
             <section aria-label="Converted images" className="space-y-4">
               <div className="flex flex-wrap items-center justify-between gap-3">
-                <h2 className="text-lg font-semibold">
+                <h2 className="text-[15px] font-semibold tracking-tight">
                   {results.length} image{results.length === 1 ? '' : 's'} ready
                 </h2>
                 <button
                   type="button"
                   onClick={downloadAll}
-                  className="focus-ring inline-flex items-center gap-2 rounded-xl bg-primary-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-primary-700"
+                  className="btn-primary-sm"
                 >
                   <Icon name="download" className="h-4 w-4" />
                   Download all (ZIP)
@@ -172,11 +172,14 @@ export default function PdfToJpg() {
               </div>
 
               {zip && (
-                <div className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm dark:border-slate-800 dark:bg-slate-900">
+                <div className="card flex items-center gap-3 px-4 py-3.5 text-sm">
+                  <Icon name="file" className="h-5 w-5 shrink-0 text-primary-600 dark:text-primary-400" />
                   <span className="text-slate-500 dark:text-slate-400">
-                    ZIP ready — {formatBytes(zip.size)} ·{' '}
+                    ZIP ready — <span className="font-semibold tabular-nums text-slate-700 dark:text-slate-200">{formatBytes(zip.size)}</span>
                   </span>
-                  <DownloadButton href={zip.url} fileName={zip.name} label="Download ZIP" />
+                  <span className="ml-auto">
+                    <DownloadButton href={zip.url} fileName={zip.name} label="Download ZIP" />
+                  </span>
                 </div>
               )}
 
@@ -184,21 +187,22 @@ export default function PdfToJpg() {
                 {results.map((item) => (
                   <div
                     key={item.page}
-                    className="overflow-hidden rounded-xl border border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900"
+                    className="group overflow-hidden rounded-xl border border-slate-200/80 bg-white shadow-card transition-all duration-200 hover:border-slate-300 hover:shadow-lift dark:border-slate-800 dark:bg-slate-900 dark:hover:border-slate-700"
                   >
                     <img
                       src={item.url}
                       alt={`Page ${item.page}`}
                       className="w-full object-contain"
                     />
-                    <div className="flex items-center justify-between gap-2 border-t border-slate-200 px-3 py-2 dark:border-slate-800">
-                      <span className="text-xs font-medium text-slate-500 dark:text-slate-400">
+                    <div className="flex items-center justify-between gap-2 border-t border-slate-200/80 px-3 py-2 dark:border-slate-800">
+                      <span className="text-xs font-medium tabular-nums text-slate-500 dark:text-slate-400">
                         Page {item.page}
                       </span>
                       <DownloadButton
                         href={item.url}
                         fileName={`${baseName(file.name)}-page-${item.page}.jpg`}
                         label="Save"
+                        small
                       />
                     </div>
                   </div>
